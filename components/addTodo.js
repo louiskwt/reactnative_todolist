@@ -10,6 +10,7 @@ export default function AddTodo({ submitHandler }) {
 
 	const pressHandler = () => {
 		submitHandler(text);
+		setText('');
 	};
 
 	return (
@@ -18,6 +19,7 @@ export default function AddTodo({ submitHandler }) {
 				placeholder='New Todo'
 				onChangeText={changeHandler} // val automatically passed in
 				style={styles.input}
+				defaultValue={text}
 			/>
 			<Button onPress={pressHandler} title='Add todo' color='coral' />
 		</View>
